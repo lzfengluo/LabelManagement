@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">标签管理系统</string>
+
+    <!--item_left_menu 侧滑菜单栏-->
+    <string name="menu_set">设置</string>
+    <string name="menu_vocie">声音</string>
+    <string name="menu_shake">震动</string>
+    <string name="menu_more">更多</string>
+    <string name="menu_guide">新手指南</string>
+    <string name="menu_update">版本更新</string>
+    <string name="menu_help">帮助</string>
+    <string name="menu_agreement">用户协议</string>
+
+    <string name="menu_tab_read">读取</string>
+    <string name="menu_tab_write">写入</string>
+    <string name="menu_tab_file">文件管理</string>
+
 </resources>

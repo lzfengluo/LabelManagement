@@ -8,4 +8,7 @@
     <color name="transparent">#00000000</color>
     <!--白色-->
     <color name="white">#FFFFFF</color>
+    <!--浅灰色-->
+    <color name="light_gray">#9daab2</color>
+    <color name="dark_gray">#303a3f</color>
 </resources>

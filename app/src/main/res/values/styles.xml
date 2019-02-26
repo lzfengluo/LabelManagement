@@ -11,4 +11,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MyToggleButton" parent="@android:style/Widget.CompoundButton">
+        <item name="android:button">@drawable/bg_menu_toggle</item>
+    </style>
+
 </resources>

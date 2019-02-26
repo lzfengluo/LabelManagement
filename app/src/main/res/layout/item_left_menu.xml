@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="272dp"
+    android:layout_height="match_parent"
+    android:paddingLeft="24dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/menu_set"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:gravity="center_vertical"
+        android:text="@string/menu_set"
+        android:textColor="@color/light_gray"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/menu_vocie"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:text="@string/menu_vocie"
+        android:textColor="@color/dark_gray"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/menu_set" />
+
+    <ToggleButton
+        android:id="@+id/btn_voice"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:textOff=""
+        android:textOn=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menu_set"
+        style="@style/MyToggleButton" />
+
+    <TextView
+        android:id="@+id/menu_shake"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:text="@string/menu_shake"
+        android:textColor="@color/dark_gray"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/menu_vocie" />
+
+    <ToggleButton
+        android:id="@+id/btn_shake"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:textOff=""
+        android:textOn=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menu_vocie"
+        style="@style/MyToggleButton" />
+
+    <TextView
+        android:id="@+id/menu_more"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:gravity="center_vertical"
+        android:text="@string/menu_more"
+        android:textColor="#9daab2"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/menu_shake" />
+
+    <TextView
+        android:id="@+id/menu_guide"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:drawableEnd="@mipmap/arrow1_right"
+        android:paddingRight="24dp"
+        android:gravity="center_vertical"
+        android:text="@string/menu_guide"
+        android:textColor="@color/dark_gray"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/menu_more" />
+
+    <TextView
+        android:id="@+id/menu_update"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:drawableEnd="@mipmap/arrow1_right"
+        android:paddingRight="24dp"
+        android:gravity="center_vertical"
+        android:text="@string/menu_update"
+        android:textColor="@color/dark_gray"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/menu_guide" />
+
+    <TextView
+        android:paddingRight="24dp"
+        android:drawableEnd="@mipmap/arrow1_right"
+        android:id="@+id/menu_help"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:text="@string/menu_help"
+        android:textColor="@color/dark_gray"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/menu_update" />
+
+    <TextView
+        android:paddingRight="24dp"
+        android:drawableEnd="@mipmap/arrow1_right"
+        android:id="@+id/menu_agreement"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:text="@string/menu_agreement"
+        android:textColor="@color/dark_gray"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/menu_help" />
+
+</android.support.constraint.ConstraintLayout>
