@@ -111,16 +111,16 @@ public class MainActivity extends AppCompatActivity {
                     mDrawerLayout.openDrawer(GravityCompat.START);//显示侧边栏
                     break;
                 case R.id.menu_guide:
-                    openAct(NothingActivity.class);
+                    openAct(NothingActivity.class);//新手指南页面
                     break;
                 case R.id.menu_update:
-                    openAct(NothingActivity.class);
+                    openAct(NothingActivity.class);//版本更新页面
                     break;
                 case R.id.menu_help:
-                    openAct(NothingActivity.class);
+                    openAct(NothingActivity.class);//帮助页面
                     break;
                 case R.id.menu_agreement:
-                    openAct(NothingActivity.class);
+                    openAct(NothingActivity.class);//用户协议页面
                     break;
 
             }

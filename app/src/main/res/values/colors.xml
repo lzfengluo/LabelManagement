@@ -11,4 +11,6 @@
     <!--浅灰色-->
     <color name="light_gray">#9daab2</color>
     <color name="dark_gray">#303a3f</color>
+
+    <color name="gray">#f1f1f1</color>
 </resources>
