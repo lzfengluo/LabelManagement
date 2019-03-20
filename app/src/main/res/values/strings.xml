@@ -18,4 +18,6 @@
     <string name="write_title_one">单个写入</string>
     <string name="write_title_more">批量写入</string>
 
+    <string name="scan_file">正在扫描文件中...</string>
+
 </resources>
