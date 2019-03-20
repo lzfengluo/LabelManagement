@@ -7,17 +7,19 @@ import android.widget.LinearLayout;
 
 import com.shizhefei.fragment.LazyFragment;
 
+import java.util.Objects;
+
 /**
  * 写入主界面
- * created by 张智超 on 2019/2/27
+ *
+ * @author 张智超
+ * @date 2019/2/27
  */
 public class WriteFragment extends LazyFragment {
 
-    private LinearLayout mLlWriteSingle;//单个写入
-    private LinearLayout mLlWriteMore;//批量写入
-    private Intent intent = new Intent();//intent传递对象
+    private Intent intent = new Intent();
 
-    public WriteFragment(){
+    public WriteFragment() {
 
     }
 
@@ -35,25 +37,31 @@ public class WriteFragment extends LazyFragment {
         initView();
     }
 
-    public void initView(){
-        mLlWriteSingle = (LinearLayout) findViewById(R.id.ll_write_single);
-        mLlWriteSingle.setOnClickListener(new onClickWrite());
-        mLlWriteMore = (LinearLayout) findViewById(R.id.ll_write_more);
-        mLlWriteMore.setOnClickListener(new onClickWrite());
+    public void initView() {
+        //单个写入
+        LinearLayout mLlWriteSingle = (LinearLayout) findViewById(R.id.ll_write_single);
+        mLlWriteSingle.setOnClickListener(new OnClickWrite());
+        //批量写入
+        LinearLayout mLlWriteMore = (LinearLayout) findViewById(R.id.ll_write_more);
+        mLlWriteMore.setOnClickListener(new OnClickWrite());
     }
 
-    // 创建独立类实现控件监听事件
-    public class onClickWrite implements View.OnClickListener {
+    /**
+     * 创建独立类实现控件监听事件
+     */
+    public class OnClickWrite implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            switch (v.getId()){
+            switch (v.getId()) {
                 case R.id.ll_write_single:
-                    intent.setClass(getActivity(),NothingActivity.class);
+                    intent.setClass(Objects.requireNonNull(getActivity()), NothingActivity.class);
                     startActivity(intent);
                     break;
                 case R.id.ll_write_more:
-                    intent.setClass(getActivity(),NothingActivity.class);
+                    intent.setClass(Objects.requireNonNull(getActivity()), NothingActivity.class);
                     startActivity(intent);
+                    break;
+                default:
                     break;
             }
         }

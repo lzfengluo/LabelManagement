@@ -6,6 +6,7 @@ import com.shizhefei.fragment.LazyFragment;
 
 /**
  * 读取界面
+ * @author 张智超
  */
 public class ReadFragment extends LazyFragment {
 

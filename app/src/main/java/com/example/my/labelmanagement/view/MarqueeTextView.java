@@ -7,8 +7,8 @@ import android.widget.TextView;
 
 /**
  * 跑马灯效果的TextView
- * Created by 张智超 on 2019/02/25
- *
+ * @author 张智超
+ * @date 2019/02/25
  * @SuppressLint标注忽略指定的警告
  */
 @SuppressLint("AppCompatCustomView")

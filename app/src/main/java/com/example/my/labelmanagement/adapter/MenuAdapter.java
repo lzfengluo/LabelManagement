@@ -18,7 +18,8 @@ import com.shizhefei.view.indicator.IndicatorViewPager;
 
 /**
  * 横向滚动菜单适配器
- * create by 张智超 on 2019/2/26
+ * @author 张智超
+ * @date 2019/2/26
  */
 public class MenuAdapter extends IndicatorViewPager.IndicatorFragmentPagerAdapter {
 
@@ -78,7 +79,6 @@ public class MenuAdapter extends IndicatorViewPager.IndicatorFragmentPagerAdapte
         String text = textView.getText().toString();
         Paint paint = textView.getPaint();
         paint.getTextBounds(text, 0, text.length(), bounds);
-        int width = bounds.left + bounds.width();
-        return width;
+        return bounds.left + bounds.width();
     }
 }

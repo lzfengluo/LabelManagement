@@ -6,7 +6,8 @@ import android.content.Intent;
 
 /**
  * 工具类
- * created by 张智超 on 2019/2/27
+ * @author 张智超
+ * @date 2019/2/27
  */
 public class IntentUtils extends Activity {
 

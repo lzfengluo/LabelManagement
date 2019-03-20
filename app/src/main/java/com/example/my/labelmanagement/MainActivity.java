@@ -1,6 +1,5 @@
 package com.example.my.labelmanagement;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -11,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
@@ -20,109 +20,146 @@ import com.shizhefei.view.indicator.IndicatorViewPager;
 import com.shizhefei.view.indicator.ScrollIndicatorView;
 import com.shizhefei.view.indicator.slidebar.ColorBar;
 import com.shizhefei.view.indicator.transition.OnTransitionTextListener;
+import com.speedata.libutils.SharedXmlUtil;
 
 /**
  * 主界面
- * Created by 张智超 on 2019/02/25
+ * @author 张智超
+ * @date 2019/02/25
  */
 public class MainActivity extends AppCompatActivity {
 
-    private DrawerLayout mDrawerLayout;//侧滑样式
-    private TextView mToolbarTitle;//标题
-    private ImageView mIvMenu;//侧滑菜单按钮
-    private NavigationView mNvMenu;//侧边菜单栏
-    private ScrollIndicatorView mIndicator;//横向菜单
-    private ViewPager mViewPager;//页面
-
-    private IndicatorViewPager indicatorViewPager;
-    private MenuAdapter adapter;
-
-    private ToggleButton mBtnVoice;//声音
-    private ToggleButton mBtnShake;//震动
-    private TextView mMenuGuide;//新手指南
-    private TextView mMenuUpdate;//版本更新
-    private TextView mMenuHelp;//帮助
-    private TextView mMenuAgreement;//用户协议
+    private DrawerLayout mDrawerLayout;
+    private TextView mToolbarTitle;
+    private ImageView mIvMenu;
+    private ScrollIndicatorView mIndicator;
+    private ViewPager mViewPager;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);//去掉自带标题栏
+        //去掉自带标题栏
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
         initView();
         initDate();
     }
 
-    // 初始化控件id
+    /**
+     * 初始化控件id
+     */
     private void initView() {
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.mDrawerLayout);
-        mToolbarTitle = (TextView) findViewById(R.id.mToolbarTitle);
-        mIvMenu = (ImageView) findViewById(R.id.iv_menu);
-        mNvMenu = (NavigationView) findViewById(R.id.mNvMenu);
-        mIndicator = (ScrollIndicatorView) findViewById(R.id.indicator);
-        mViewPager = (ViewPager) findViewById(R.id.viewPager);
+        //侧滑样式
+        mDrawerLayout = findViewById(R.id.mDrawerLayout);
+        //标题
+        mToolbarTitle = findViewById(R.id.mToolbarTitle);
+        //侧滑菜单按钮
+        mIvMenu = findViewById(R.id.iv_menu);
+        //侧边菜单栏
+        NavigationView mNvMenu = findViewById(R.id.mNvMenu);
+        //横向菜单
+        mIndicator = findViewById(R.id.indicator);
+        //页面
+        mViewPager = findViewById(R.id.viewPager);
 
         // 加载左侧菜单栏布局
         View headerView = mNvMenu.inflateHeaderView(R.layout.item_left_menu);
         // 获取菜单栏中的控件
-        mBtnVoice = headerView.findViewById(R.id.btn_voice);
+        //声音
+        ToggleButton mBtnVoice = headerView.findViewById(R.id.btn_voice);
+        mBtnVoice.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    SharedXmlUtil.getInstance(MainActivity.this, "nfc").write("Voice", true);
+                } else {
+                    SharedXmlUtil.getInstance(MainActivity.this, "nfc").write("Voice", false);
+                }
+            }
+        });
+        //震动
+        ToggleButton mBtnShake = headerView.findViewById(R.id.btn_shake);
+        mBtnShake.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    SharedXmlUtil.getInstance(MainActivity.this, "nfc").write("Shake", true);
+                } else {
+                    SharedXmlUtil.getInstance(MainActivity.this, "nfc").write("Shake", false);
+                }
+            }
+        });
 
-        mBtnShake = headerView.findViewById(R.id.btn_shake);
-
-        mMenuGuide = headerView.findViewById(R.id.menu_guide);
-        mMenuGuide.setOnClickListener(new onListener());//监听点击事件
-        mMenuHelp = headerView.findViewById(R.id.menu_help);
-        mMenuHelp.setOnClickListener(new onListener());
-        mMenuUpdate = headerView.findViewById(R.id.menu_update);
-        mMenuUpdate.setOnClickListener(new onListener());
-        mMenuAgreement = headerView.findViewById(R.id.menu_agreement);
-        mMenuAgreement.setOnClickListener(new onListener());
+        //新手指南
+        TextView mMenuGuide = headerView.findViewById(R.id.menu_guide);
+        //监听点击事件
+        mMenuGuide.setOnClickListener(new OnListener());
+        //帮助
+        TextView mMenuHelp = headerView.findViewById(R.id.menu_help);
+        mMenuHelp.setOnClickListener(new OnListener());
+        //版本更新
+        TextView mMenuUpdate = headerView.findViewById(R.id.menu_update);
+        mMenuUpdate.setOnClickListener(new OnListener());
+        //用户协议
+        TextView mMenuAgreement = headerView.findViewById(R.id.menu_agreement);
+        mMenuAgreement.setOnClickListener(new OnListener());
     }
 
     private void initDate() {
         mToolbarTitle.setText(R.string.app_name);
-        mIvMenu.setOnClickListener(new onListener());
+        mIvMenu.setOnClickListener(new OnListener());
 
-        float unSelectSize = 14;//未选中字体大小
-        float selectSize = 16;//选中字体大小
-        mIndicator.setOnTransitionListener(new OnTransitionTextListener().setColor(Color.parseColor("#ffffff"),Color.parseColor("#DCE8FC")).setSize(selectSize,unSelectSize));
+        //未选中字体大小
+        float unSelectSize = 14;
+        //选中字体大小
+        float selectSize = 16;
+        mIndicator.setOnTransitionListener(new OnTransitionTextListener().setColor(Color.parseColor("#ffffff"), Color.parseColor("#DCE8FC")).setSize(selectSize, unSelectSize));
         // 设置字体下面的bar样式
         ColorBar scrollBar = new ColorBar(this, Color.parseColor("#ffffff"), 6);
         scrollBar.setWidth(110);
         mIndicator.setScrollBar(scrollBar);
         // 设置预加载页面数量为3
         mViewPager.setOffscreenPageLimit(3);
-        indicatorViewPager = new IndicatorViewPager(mIndicator, mViewPager);
+        IndicatorViewPager indicatorViewPager = new IndicatorViewPager(mIndicator, mViewPager);
         // 加载适配器
-        adapter = new MenuAdapter(getSupportFragmentManager(), this);
+        MenuAdapter adapter = new MenuAdapter(getSupportFragmentManager(), this);
         indicatorViewPager.setAdapter(adapter);
 
 
     }
 
-    // 独立类实现按钮监听事件
-    public class onListener implements View.OnClickListener {
+
+    /**
+     * 独立类实现按钮监听事件
+     */
+    public class OnListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.iv_menu:
-                    mDrawerLayout.openDrawer(GravityCompat.START);//显示侧边栏
+                    //显示侧边栏
+                    mDrawerLayout.openDrawer(GravityCompat.START);
                     break;
                 case R.id.menu_guide:
-                    openAct(NothingActivity.class);//新手指南页面
+                    //新手指南页面
+                    openAct(NothingActivity.class);
                     break;
                 case R.id.menu_update:
-                    openAct(NothingActivity.class);//版本更新页面
+                    //版本更新页面
+                    openAct(NothingActivity.class);
                     break;
                 case R.id.menu_help:
-                    openAct(NothingActivity.class);//帮助页面
+                    //帮助页面
+                    openAct(NothingActivity.class);
                     break;
                 case R.id.menu_agreement:
-                    openAct(NothingActivity.class);//用户协议页面
+                    //用户协议页面
+                    openAct(NothingActivity.class);
                     break;
-
+                default:
+                    break;
             }
         }
     }

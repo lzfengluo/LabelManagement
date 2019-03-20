@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <include layout="@layout/back_title_toolbar" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="尚未开发"
-        android:textSize="30sp"
         android:gravity="center"
-        android:textColor="#9b9b9b" />
+        android:text="尚未开发"
+        android:textColor="#9b9b9b"
+        android:textSize="30sp" />
 
 </android.support.constraint.ConstraintLayout>
