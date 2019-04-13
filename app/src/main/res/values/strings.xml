@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">标签管理系统</string>
 
+    <string name="write">写入</string>
+    <string name="back">返回</string>
+
     <!--item_left_menu 侧滑菜单栏-->
     <string name="menu_set">设置</string>
     <string name="menu_vocie">声音</string>
@@ -17,8 +20,92 @@
 
     <string name="write_title_one">单个写入</string>
     <string name="write_title_more">批量写入</string>
+    <string name="write_single_device">设备信息</string>
+    <string name="write_single_rack">机柜信息</string>
 
-    <string name="scan_file">正在扫描文件中...</string>
+    <string name="scan_file">正在扫描文件中…</string>
+
+    <!--写标签-->
+    <string name="sn">序列号</string>
+    <string name="device_modle">设备型号</string>
+    <string name="device_type">设备类型</string>
+    <string name="height">占用U位数(1–54)</string>
+    <string name="vendor">厂商</string>
+    <string name="shenmingzhouqi">资产生命周期(1–20)</string>
+    <string name="first_time">首次使用日期</string>
+    <string name="weights">重量(1–5000)</string>
+    <string name="rate_power">额定功率(1–10000)</string>
+    <string name="owner">资产所有人</string>
+    <string name="bujian_num">部件号</string>
+    <string name="single_device_year">年</string>
+
+    <!--写标签hint-->
+    <string name="sn_hint">例：2102312AVH10J4000002</string>
+    <string name="device_modle_hint">例：1288H V5</string>
+    <string name="device_type_hint">例：Server</string>
+    <string name="height_hint">例：2</string>
+    <string name="vendor_hint">例：Huawei</string>
+    <string name="shenmingzhouqi_hint">例：5</string>
+    <string name="first_time_hint">例：2018–11–27</string>
+    <string name="weights_hint">例：40</string>
+    <string name="rate_power_hint">例：1000</string>
+    <string name="owner_hint">例：Huawei</string>
+    <string name="bujian_num_hint">例：Device-09</string>
+    <string name="write_name">请输入</string>
+    <string name="write_pwd">请输入</string>
+
+    <!--提示-->
+    <string name="write_must">*号为必写选项!</string>
+    <string name="write_string_err">请输入合法字符!</string>
+    <string name="write_height_err">请输入范围在1–54之间的整数!</string>
+    <string name="num_err_500">请输入范围在1–500之间的整数!</string>
+    <string name="num_err_32">请输入范围在1–32之间的整数!</string>
+    <string name="num_err_128">请输入范围在1–128之间的整数!</string>
+    <string name="num_err_10w">请输入范围在1–100000之间的整数!</string>
+    <string name="write_shengmingzhouqi_err">请输入范围在1–20之间的整数!</string>
+    <string name="write_weight_err">请输入范围在1–5000之间的整数!</string>
+
+    <string name="write_gonglv_err">请输入范围在1–10000之间的整数!</string>
+    <string name="write_dialog_title">RFID写入警告!</string>
+    <string name="write_dialog_mesage">请将RFID标签靠近读\写卡区域</string>
+    <string name="write_dialog_btnsu">确定</string>
+    <string name="write_dialog_btnfa">取消</string>
+    <string name="write_dialog2_title">写入成功!</string>
+    <string name="write_dialog2_mesage">RFID写入成功,是否继续写入?</string>
+    <string name="write_dialog2_btnsu">继续写入</string>
+    <string name="write_dialog2_btnfa">取消</string>
+    <string name="scan_msg">请对准条形码</string>
+    <string name="scan_success">扫描成功</string>
+    <string name="db_no_data">数据库中无对应信息</string>
+    <string name="support">不支持MifareUltralight数据格式!</string>
+    <string name="near">请将RFID标签或者贴纸靠近手机背面</string>
+
+    <string name="crc_failed">CRC检验不通过</string>
+    <string name="write_success">写入成功</string>
+    <string name="write_failed">写入失败</string>
+    <string name="write_ing">写入中…</string>
+    <string name="toast_legal">请使用合法字符：英文、数字、_、-、空格</string>
+
+
+    <string name="write_rack_style">操作方式</string>
+    <string name="write_rack_cb_read">获取</string>
+    <string name="write_rack_cb_write">录入</string>
+    <string name="write_rack_user">账户名</string>
+    <string name="write_rack_pwd">密码</string>
+    <string name="write_rack_area">数据中心区域</string>
+    <string name="write_rack_name">数据中心名称</string>
+    <string name="write_rack_row">机柜行号(1–500)</string>
+    <string name="write_rack_column">机柜列号(1–500)</string>
+    <string name="write_rack_ip4_address">IPv4地址</string>
+    <string name="rack_ipv4_mask">IPv4掩码(1–32)</string>
+    <string name="rack_ipv4_gateway">IPv4网关</string>
+    <string name="rack_ipv6_address">IPv6地址</string>
+    <string name="rack_ipv6_prefix">IPv6前缀(1–128)</string>
+    <string name="rack_ipv6_gateway">IPv6网关</string>
+    <string name="rack_power">机柜供电能力(1–100000)</string>
+    <string name="read_rack_power">机柜供电能力(W)</string>
+    <string name="rack_status">配置状态</string>
+    <string name="rack_msg">配置信息</string>
 
     <!--新手指南 activity_newbie_guide-->
     <string name="guide_title1">标题1</string>
@@ -77,5 +164,10 @@
     <string name="agreement_text3">
         本协议的订立、执行和解释及争议的解决均应适用中华人民共和国法律。
     </string>
+
+
+    <string name="nfc_erro">请在系统设置启用NFC功能!</string>
+    <string name="nfc_erro2">设备不支持NFC!</string>
+
 
 </resources>

@@ -54,7 +54,7 @@ public class WriteFragment extends LazyFragment {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.ll_write_single:
-                    intent.setClass(Objects.requireNonNull(getActivity()), NothingActivity.class);
+                    intent.setClass(Objects.requireNonNull(getActivity()), WriteActivity.class);
                     startActivity(intent);
                     break;
                 case R.id.ll_write_more:

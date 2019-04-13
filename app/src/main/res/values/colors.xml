@@ -22,6 +22,8 @@
     <color name="tou_ming">#00000000</color>
 
     <color name="text_device_content_hint">#ccd4d8</color>
+    <color name="red">#e95c53</color>
+    <color name="line_dwon">#e7eaed</color>
 
 
 </resources>

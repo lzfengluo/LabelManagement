@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="data">
+        <item>Server</item>
+        <item>Storage</item>
+        <item>Network</item>
+    </string-array>
+    <string-array name="status">
+        <item>未使用（Unused）</item>
+        <item>失败（Failed）</item>
+        <item>成功（Successed）</item>
+    </string-array>
+    <string-array name="zw">
+        <item>1</item>
+        <item>2</item>
+        <item>4</item>
+        <item>8</item>
+        <item>12</item>
+    </string-array>
+    <string-array name="cs">
+        <item>Huawei</item>
+        <item>Dell</item>
+        <item>HP</item>
+        <item>IBM</item>
+        <item>CISCO</item>
+        <item>Inspur</item>
+        <item>Lenovo</item>
+        <item>Supermicro</item>
+        <item>ZTE</item>
+    </string-array>
+    <string-array name="xh">
+        <item>1288H V5</item>
+        <item>2288 V5</item>
+        <item>2288H V5</item>
+        <item>2488 V5</item>
+        <item>2488H V5</item>
+        <item>5288 V3</item>
+        <item>5288 V5</item>
+        <item>5885H V5</item>
+        <item>8100 V5</item>
+        <item>RH1288 V3</item>
+        <item>RH2288 V3</item>
+        <item>RH2288H V3</item>
+        <item>RH5885 V3</item>
+        <item>RH5885H V3</item>
+        <item>RH8100 V3</item>
+        <item>E6000 Chassis</item>
+        <item>E9000 Chassis</item>
+        <item>FusionServer G5500</item>
+        <item>G2500</item>
+    </string-array>
+
+</resources>

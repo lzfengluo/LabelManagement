@@ -2,20 +2,28 @@ package com.example.my.labelmanagement;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.nfc.NfcAdapter;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.example.my.labelmanagement.adapter.MenuAdapter;
+import com.example.my.labelmanagement.app.BaseNfcActivity;
+import com.example.my.labelmanagement.listener.OnNewIntentListener;
+import com.example.my.labelmanagement.utils.ToastUtil;
 import com.shizhefei.view.indicator.IndicatorViewPager;
 import com.shizhefei.view.indicator.ScrollIndicatorView;
 import com.shizhefei.view.indicator.slidebar.ColorBar;
@@ -27,24 +35,32 @@ import com.speedata.libutils.SharedXmlUtil;
  * @author 张智超
  * @date 2019/02/25
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseNfcActivity {
 
     private DrawerLayout mDrawerLayout;
     private TextView mToolbarTitle;
     private ImageView mIvMenu;
     private ScrollIndicatorView mIndicator;
     private ViewPager mViewPager;
+    /**
+     * 声音
+     */
+    private ToggleButton mBtnVoice;
+    /**
+     * 震动
+     */
+    private ToggleButton mBtnShake;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //去掉自带标题栏
-        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+//        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
 
         initView();
-        initDate();
+        initData();
     }
 
     /**
@@ -68,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         View headerView = mNvMenu.inflateHeaderView(R.layout.item_left_menu);
         // 获取菜单栏中的控件
         //声音
-        ToggleButton mBtnVoice = headerView.findViewById(R.id.btn_voice);
+        mBtnVoice = headerView.findViewById(R.id.btn_voice);
         mBtnVoice.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -80,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //震动
-        ToggleButton mBtnShake = headerView.findViewById(R.id.btn_shake);
+        mBtnShake = headerView.findViewById(R.id.btn_shake);
         mBtnShake.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -107,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
         mMenuAgreement.setOnClickListener(new OnListener());
     }
 
-    private void initDate() {
+    private void initData() {
         mToolbarTitle.setText(R.string.app_name);
         mIvMenu.setOnClickListener(new OnListener());
 
@@ -128,6 +144,40 @@ public class MainActivity extends AppCompatActivity {
         indicatorViewPager.setAdapter(adapter);
 
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        // NFC适配器，所有的关于NFC的操作从该适配器进行
+        mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
+        if (!ifNFCUse()) {
+            Log.d("zzc", "mNfcAdapter: false");
+            return;
+        }
+
+        boolean read = SharedXmlUtil.getInstance(this, "nfc").read("Voice", true);
+        mBtnVoice.setChecked(read);
+        boolean shake = SharedXmlUtil.getInstance(this, "nfc").read("Shake", true);
+        mBtnShake.setChecked(shake);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        handler.removeCallbacks(runnable);
+    }
+
+    private OnNewIntentListener onNewIntentListener = null;
+
+    public void setOnNewIntentListener(OnNewIntentListener onNewIntentListener) {
+        this.onNewIntentListener = onNewIntentListener;
+    }
+
+    private void callBack(Intent intent) {
+        if (onNewIntentListener != null) {
+            onNewIntentListener.sendIntent(intent);
+        }
     }
 
 
@@ -172,6 +222,63 @@ public class MainActivity extends AppCompatActivity {
     public void openAct(Class<?> actClass) {
         Intent intent = new Intent(this, actClass);
         startActivity(intent);
+    }
+
+    /**
+     * 检测工作,判断设备的NFC支持情况
+     *
+     * @return 返回true或false
+     */
+    protected Boolean ifNFCUse() {
+        if (mNfcAdapter == null) {
+            Toast.makeText(this, getResources().getString(R.string.nfc_erro2), Toast.LENGTH_SHORT).show();
+            MainActivity.this.finish();
+            return false;
+        }
+        if (!mNfcAdapter.isEnabled()) {
+            ToastUtil.showShort(this, getResources().getString(R.string.nfc_erro));
+            handler.postDelayed(runnable, 3000);
+            return false;
+        }
+        return true;
+    }
+
+    private Handler handler = new Handler();
+
+    Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            startActivity(new Intent("android.settings.NFC_SETTINGS"));
+        }
+    };
+
+    private long mkeyTime = 0;
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_BACK:
+            case KeyEvent.ACTION_DOWN:
+                if ((System.currentTimeMillis() - mkeyTime) > 2000) {
+                    mkeyTime = System.currentTimeMillis();
+                    boolean cn = "CN".equals(getApplicationContext().getResources().getConfiguration().locale.getCountry());
+                    if (cn) {
+                        Toast.makeText(getApplicationContext(), "再按一次退出", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Click again to exit", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    try {
+                        finish();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+                return false;
+            default:
+                break;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
 }

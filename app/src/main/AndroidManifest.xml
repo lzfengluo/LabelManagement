@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.my.labelmanagement">
 
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,7 +22,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".NothingActivity"></activity>
+        <activity android:name=".NothingActivity"/>
 
         <activity android:name=".MainActivity"/>
         <activity android:name=".NewbieGuideActivity"/>
@@ -27,6 +30,8 @@
         <activity android:name=".HelpQuestionActivity"/>
         <activity android:name=".HelpActivity"/>
         <activity android:name=".UserAgreementActivity"/>
+        <activity android:name=".WriteActivity"
+            android:launchMode="singleTop"/>
 
     </application>
 
