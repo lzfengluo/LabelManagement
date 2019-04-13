@@ -13,4 +13,15 @@
     <color name="dark_gray">#303a3f</color>
 
     <color name="gray">#f1f1f1</color>
+    <color name="bg_index_all">#F7FAFF</color>
+    <color name="help_list">#F9FCFF</color>
+    <color name="tab_select">#039ff2</color>
+    <color name="tab_normal">#666666</color>
+    <color name="tab_blue">#4099ff</color>
+    <color name="tab_pink">#dc81b2</color>
+    <color name="tou_ming">#00000000</color>
+
+    <color name="text_device_content_hint">#ccd4d8</color>
+
+
 </resources>

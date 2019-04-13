@@ -144,19 +144,19 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.menu_guide:
                     //新手指南页面
-                    openAct(NothingActivity.class);
+                    openAct(NewbieGuideActivity.class);
                     break;
                 case R.id.menu_update:
                     //版本更新页面
-                    openAct(NothingActivity.class);
+                    openAct(CheckUpdateActivity.class);
                     break;
                 case R.id.menu_help:
                     //帮助页面
-                    openAct(NothingActivity.class);
+                    openAct(HelpActivity.class);
                     break;
                 case R.id.menu_agreement:
                     //用户协议页面
-                    openAct(NothingActivity.class);
+                    openAct(UserAgreementActivity.class);
                     break;
                 default:
                     break;
