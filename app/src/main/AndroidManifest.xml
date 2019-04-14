@@ -7,10 +7,10 @@
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
+        android:name=".app.MyApp"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_h"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
@@ -32,6 +32,9 @@
         <activity android:name=".UserAgreementActivity"/>
         <activity android:name=".WriteActivity"
             android:launchMode="singleTop"/>
+        <activity android:name=".TagActivity"/>
+        <activity android:name=".FeatureActivity"/>
+        <activity android:name=".HistoryActivity"/>
 
     </application>
 

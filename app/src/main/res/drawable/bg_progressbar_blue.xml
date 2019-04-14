@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+     <!--进度条背景颜色  -->
+       
+    <item
+        android:top="2dp"
+        android:id="@android:id/background"
+        android:height="4dp">
+               
+        <shape>
+            <corners android:radius="2dp" />
+            <solid android:color="#e7eaed" />
+                   
+        </shape>
+           
+    </item>
+        <!-- 设置进度条颜色 -->
+       
+    <item
+        android:id="@android:id/progress"
+        android:height="8dp">
+               
+        <scale
+            android:drawable="@drawable/progress_bar_ct"
+            android:scaleWidth="100%" />
+    </item>
+</layer-list>

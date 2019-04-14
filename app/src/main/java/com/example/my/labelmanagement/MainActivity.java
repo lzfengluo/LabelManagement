@@ -90,8 +90,10 @@ public class MainActivity extends BaseNfcActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     SharedXmlUtil.getInstance(MainActivity.this, "nfc").write("Voice", true);
+                    ToastUtil.showShort(MainActivity.this,"声音已开启");
                 } else {
                     SharedXmlUtil.getInstance(MainActivity.this, "nfc").write("Voice", false);
+                    ToastUtil.showShort(MainActivity.this,"声音已关闭");
                 }
             }
         });
@@ -102,8 +104,10 @@ public class MainActivity extends BaseNfcActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     SharedXmlUtil.getInstance(MainActivity.this, "nfc").write("Shake", true);
+                    ToastUtil.showShort(MainActivity.this,"震动已开启");
                 } else {
                     SharedXmlUtil.getInstance(MainActivity.this, "nfc").write("Shake", false);
+                    ToastUtil.showShort(MainActivity.this,"震动已关闭");
                 }
             }
         });

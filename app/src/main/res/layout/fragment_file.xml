@@ -2,28 +2,31 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f7faff"
     android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/ll_loading"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="@color/transparent"
+        android:background="@color/tou_ming"
         android:gravity="center">
+
         <ImageView
             android:id="@+id/iv_loading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/icons_loading"/>
+            android:src="@mipmap/icons_loading" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="5dp"
             android:text="@string/scan_file"
             android:textColor="@color/light_gray"
-            android:textSize="14sp"/>
-
+            android:textSize="14sp" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_marginTop="16dp"
         android:id="@+id/ll_file_feature"
@@ -36,6 +39,7 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
+
         <ImageView
             android:id="@+id/iv_feature"
             android:layout_width="wrap_content"
@@ -43,6 +47,71 @@
             android:layout_marginLeft="16dp"
             android:src="@mipmap/icons_shujubiao" />
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/file_feature_title"
+                android:textColor="@color/dark_gray"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/file_feature_address"
+                android:textColor="@color/light_gray"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_file_tag"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_fragment_write"
+        android:elevation="1dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/iv_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:src="@mipmap/icons_qingdanbiao" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/file_tag_title"
+                android:textColor="@color/dark_gray"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/file_tag_address"
+                android:textColor="@color/light_gray"
+                android:textSize="12sp" />
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

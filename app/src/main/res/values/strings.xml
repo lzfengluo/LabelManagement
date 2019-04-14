@@ -107,6 +107,44 @@
     <string name="rack_status">配置状态</string>
     <string name="rack_msg">配置信息</string>
 
+    <string name="file_feature_title">IT设备特征数据表</string>
+    <string name="file_feature_address">文件路径：LabelRFID/feature</string>
+    <string name="file_tag_title">设备标签清单表</string>
+    <string name="file_tag_address">文件路径：LabelRFID/tag</string>
+
+    <string name="no_file_error">LabelRFID/tag目录下没有可用文件</string>
+    <string name="import_error">导入过程发生错误</string>
+    <string name="no_file">未扫描到手机文件</string>
+    <string name="file_name">文件名</string>
+    <string name="del_hint">s后删除源文件</string>
+    <string name="feature_num">标签数：</string>
+    <string name="import_db">导入数据库</string>
+    <string name="import_success">导入成功</string>
+    <string name="dialog_error_title">导入失败</string>
+    <string name="data_load">数据加载中…</string>
+    <string name="see_history">查看导入历史记录</string>
+    <string name="failed_save">失败日志已保存至</string>
+    <string name="sure">确定</string>
+    <string name="save_failed">错误信息保存失败</string>
+    <string name="history">导入历史记录</string>
+    <string name="history_add">新增</string>
+    <string name="history_update">修改</string>
+    <string name="history_del">删除</string>
+    <string name="del_file">已删除源文件</string>
+    <string name="expect_success">数据库导出完成，数据已保存至LabelRFID/log/History.xlsx</string>
+    <string name="expect_nodata">无数据导出</string>
+    <string name="export_failed">导出失败</string>
+    <string name="check">校验</string>
+    <string name="check_success">校验成功</string>
+    <string name="check_failed">校验失败</string>
+    <string name="delete">删除</string>
+    <string name="delete_failed">文件删除失败</string>
+    <string name="write_already">已写标签</string>
+    <string name="all_tag">标签总数</string>
+    <string name="again_status">状态</string>
+    <string name="jiaoyan_success">校验成功，标签信息已同步到批量写入页面</string>
+    <string name="is_del_file">确定删除此文件吗？</string>
+
     <!--新手指南 activity_newbie_guide-->
     <string name="guide_title1">标题1</string>
     <string name="guide_model1">模块一</string>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="16dp"
+    android:background="@drawable/bg_more"
+    android:elevation="1dp">
+
+    <com.example.my.labelmanagement.view.MarqueeTextView
+        android:id="@+id/tv_file_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="120dp"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:singleLine="true"
+        android:text="@string/file_name"
+        android:textColor="@color/dark_gray"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/btn_import"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/feature_num"
+        android:textColor="@color/light_gray"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_file_name" />
+
+    <TextView
+        android:id="@+id/tv_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="0"
+        android:textColor="@color/dark_gray"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@+id/tv1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_file_name" />
+
+
+    <Button
+        android:id="@+id/btn_import"
+        android:layout_width="96dp"
+        android:layout_height="32dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/bg_btn_import"
+        android:text="@string/import_db"
+        android:textColor="@color/blue_to_white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_import_success"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:drawableLeft="@mipmap/icons_success"
+        android:drawablePadding="8dp"
+        android:text="@string/import_success"
+        android:textColor="@color/dark_gray"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+    <TextView
+        android:id="@+id/tv_import_failed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:drawableLeft="@mipmap/icons_fail"
+        android:drawablePadding="8dp"
+        android:paddingBottom="16dp"
+        android:text="@string/dialog_error_title"
+        android:textColor="@color/dark_gray"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_import_success" />
+
+    <TextView
+        android:id="@+id/tv_del1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="5"
+        android:textColor="#4099ff"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/view"
+        app:layout_constraintRight_toLeftOf="@+id/tv_del2" />
+
+    <TextView
+        android:id="@+id/tv_del2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:paddingBottom="1dp"
+        android:text="@string/del_hint"
+        android:textColor="@color/light_gray"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/view"
+        app:layout_constraintEnd_toEndOf="parent" />
+</android.support.constraint.ConstraintLayout>

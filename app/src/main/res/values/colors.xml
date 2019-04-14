@@ -17,7 +17,8 @@
     <color name="help_list">#F9FCFF</color>
     <color name="tab_select">#039ff2</color>
     <color name="tab_normal">#666666</color>
-    <color name="tab_blue">#4099ff</color>
+    <color name="tab_blue">#31baff</color>
+    <color name="ic_app_background">#31baff</color>
     <color name="tab_pink">#dc81b2</color>
     <color name="tou_ming">#00000000</color>
 
