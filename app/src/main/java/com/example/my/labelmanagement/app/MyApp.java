@@ -3,6 +3,7 @@ package com.example.my.labelmanagement.app;
 import android.app.Application;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Environment;
+import android.support.multidex.MultiDex;
 
 import com.example.my.labelmanagement.been.DaoMaster;
 import com.example.my.labelmanagement.been.DaoSession;
@@ -26,6 +27,8 @@ public class MyApp extends Application {
         FileUtils.createOrExistsDir(Environment.getExternalStorageDirectory() + File.separator + "LabelRFID/feature/log/");
         FileUtils.createOrExistsDir(Environment.getExternalStorageDirectory() + File.separator + "LabelRFID/tag/");
         FileUtils.createOrExistsDir(Environment.getExternalStorageDirectory() + File.separator + "LabelRFID/tag/log/");
+
+        MultiDex.install(this);
     }
 
 

@@ -25,6 +25,26 @@
 
     <string name="scan_file">正在扫描文件中…</string>
 
+    <string name="fragment_read_text">请将标签放置在设备读取处</string>
+    <string name="read_height">占用U位数(U)</string>
+    <string name="read_shenmingzhouqi">资产生命周期(年)</string>
+    <string name="read_weights">重量(Kg)</string>
+    <string name="read_rate_power">额定功率(W)</string>
+    <string name="rack_operating_mode">操作方式</string>
+    <string name="fragment_action">获取</string>
+    <string name="fragment_action2">录入</string>
+    <string name="fragment_status_unused">未使用</string>
+    <string name="fragment_status_failed">失败</string>
+    <string name="fragment_status_success">成功</string>
+    <string name="gui_user">账户名</string>
+    <string name="rack_pwd">密码</string>
+    <string name="rack_center">数据中心区域</string>
+    <string name="rack_center_name">数据中心名称</string>
+    <string name="rack_row">机柜行号(1–500)</string>
+    <string name="rack_column">机柜列号(1–500)</string>
+    <string name="rack_ipv4">IPv4地址</string>
+    <string name="serport_success">SN信息已通过串口发送成功</string>
+
     <!--写标签-->
     <string name="sn">序列号</string>
     <string name="device_modle">设备型号</string>

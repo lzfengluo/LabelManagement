@@ -10,6 +10,7 @@ android {
         versionCode 1
         versionName "V1.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -44,6 +45,7 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxjava:2.0.1'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
     implementation 'com.kaopiz:kprogresshud:1.1.0'
+    implementation 'com.android.support:multidex:1.0.3'
 
     //greendao
     implementation 'org.greenrobot:greendao:3.2.2'
@@ -52,4 +54,10 @@ dependencies {
 
     implementation 'com.tencent.bugly:crashreport:2.8.6'
     implementation files('libs/classes.jar')
+
+    implementation files('libs/afinal_0.5.1_bin.jar')
+    implementation files('libs/poi-3.12-android-a.jar')
+    implementation files('libs/poi-ooxml-schemas-3.12-20150511-a.jar')
+    implementation files('libs/zp_cpcl_new.jar')
+    implementation 'com.google.code.gson:gson:2.8.0'
 }

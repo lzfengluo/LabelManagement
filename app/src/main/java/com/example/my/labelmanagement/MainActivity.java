@@ -172,6 +172,12 @@ public class MainActivity extends BaseNfcActivity {
         handler.removeCallbacks(runnable);
     }
 
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Log.d("zm", "onNewIntent: ");
+        callBack(intent);
+    }
     private OnNewIntentListener onNewIntentListener = null;
 
     public void setOnNewIntentListener(OnNewIntentListener onNewIntentListener) {
