@@ -42,7 +42,7 @@ public class BaseNfcActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //去掉自带标题栏
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-        Log.d("zm", "onCreate: ");
+        Log.d("zzc", "onCreate: ");
         MySharedPreferences.getPreference(this);
         playSoundPoolUtils = PlaySoundPoolUtils.getPlaySoundPoolUtils(this);
         //此处adapter需要重新获取，否则无法获取message
@@ -52,6 +52,7 @@ public class BaseNfcActivity extends AppCompatActivity {
         //一旦截获NFC消息，就会通过PendingIntent调用窗口
         if (mPendingIntent == null) {
             mPendingIntent = PendingIntent.getActivity(this, 0, new Intent(this, getClass()), 0);
+            Log.d("zzc", "onCreate: mPendingIntent");
         }
     }
 
@@ -61,22 +62,10 @@ public class BaseNfcActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
-//        //去掉Activity上面的状态栏
-//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-//        //去掉虚拟按键全屏显示
-//        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
-//        //点击屏幕不再显示
-//        this.getWindow().getDecorView().setSystemUiVisibility(
-//                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-//                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-//                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-//                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION // hide nav
-//                        // bar
-//                        | View.SYSTEM_UI_FLAG_FULLSCREEN // hide status bar
-//                        | View.SYSTEM_UI_FLAG_IMMERSIVE);
         //设置处理优于所有其他NFC的处理
         if (mNfcAdapter != null) {
             mNfcAdapter.enableForegroundDispatch(this, mPendingIntent, null, null);
+            Log.d("zzc", "onResume():BaseNfcActivity ");
         }
     }
 

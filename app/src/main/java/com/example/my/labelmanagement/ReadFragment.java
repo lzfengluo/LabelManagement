@@ -165,6 +165,7 @@ public class ReadFragment extends LazyFragment implements OnNewIntentListener {
     @SuppressLint("InflateParams")
     @Override
     public void sendIntent(Intent intent) {
+        Log.d("zzc","sendIntent : "+intent);
         Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
         mLlGif.setVisibility(View.VISIBLE);
         mScShowmsg.setVisibility(View.GONE);

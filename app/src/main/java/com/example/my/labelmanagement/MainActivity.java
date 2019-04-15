@@ -155,6 +155,7 @@ public class MainActivity extends BaseNfcActivity {
         super.onResume();
         // NFC适配器，所有的关于NFC的操作从该适配器进行
         mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
+        Log.d("zzc", "mNfcAdapter: onResume()");
         if (!ifNFCUse()) {
             Log.d("zzc", "mNfcAdapter: false");
             return;
@@ -175,13 +176,14 @@ public class MainActivity extends BaseNfcActivity {
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        Log.d("zm", "onNewIntent: ");
+        Log.d("zzc", "onNewIntent: "+intent);
         callBack(intent);
     }
     private OnNewIntentListener onNewIntentListener = null;
 
     public void setOnNewIntentListener(OnNewIntentListener onNewIntentListener) {
         this.onNewIntentListener = onNewIntentListener;
+        Log.d("zzc", "onNewIntentListener: "+onNewIntentListener);
     }
 
     private void callBack(Intent intent) {

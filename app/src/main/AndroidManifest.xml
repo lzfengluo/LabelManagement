@@ -13,6 +13,13 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission
+        android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="true" />
 
     <application
         android:name=".app.MyApp"
@@ -30,19 +37,38 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".NothingActivity"/>
+        <activity android:name=".NothingActivity" />
 
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".NewbieGuideActivity"/>
-        <activity android:name=".CheckUpdateActivity"/>
-        <activity android:name=".HelpQuestionActivity"/>
-        <activity android:name=".HelpActivity"/>
-        <activity android:name=".UserAgreementActivity"/>
-        <activity android:name=".WriteActivity"
-            android:launchMode="singleTop"/>
-        <activity android:name=".TagActivity"/>
-        <activity android:name=".FeatureActivity"/>
-        <activity android:name=".HistoryActivity"/>
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".NewbieGuideActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".CheckUpdateActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".HelpQuestionActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".HelpActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".UserAgreementActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".WriteActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".TagActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".FeatureActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".HistoryActivity"
+            android:launchMode="singleTop" />
 
     </application>
 
