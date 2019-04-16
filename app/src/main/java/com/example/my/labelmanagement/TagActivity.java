@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -74,6 +75,7 @@ public class TagActivity extends AppCompatActivity implements View.OnClickListen
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         final List<RvMoreAdapterBean> data = MyApp.getDaoInstant().getRvMoreAdapterBeanDao().loadAll();
+        Log.d("zzc","data  "+data);
         if (data.size() == 0) {
             mLlNull.setVisibility(View.VISIBLE);
         } else {

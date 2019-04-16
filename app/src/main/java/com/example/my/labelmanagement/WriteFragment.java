@@ -58,7 +58,7 @@ public class WriteFragment extends LazyFragment {
                     startActivity(intent);
                     break;
                 case R.id.ll_write_more:
-                    intent.setClass(Objects.requireNonNull(getActivity()), NothingActivity.class);
+                    intent.setClass(Objects.requireNonNull(getActivity()), WriteMoreActivity.class);
                     startActivity(intent);
                     break;
                 default:

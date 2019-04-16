@@ -45,6 +45,16 @@
     <string name="rack_ipv4">IPv4地址</string>
     <string name="serport_success">SN信息已通过串口发送成功</string>
 
+    <string name="write_more">批量写入</string>
+    <string name="header_class">全部分组</string>
+    <string name="header_status">全部状态</string>
+    <string name="ungrouped">未分组</string>
+    <string name="writed">已写入</string>
+    <string name="no_write">未写入</string>
+    <string name="write_again">再次写入</string>
+    <string name="write_again_tishi">请确定该标签是否再次写入？</string>
+    <string name="no_select_data">无筛选信息</string>
+
     <!--写标签-->
     <string name="sn">序列号</string>
     <string name="device_modle">设备型号</string>

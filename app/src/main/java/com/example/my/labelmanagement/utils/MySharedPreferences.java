@@ -13,7 +13,7 @@ public class MySharedPreferences {
 
     public static void getPreference(Context context) {
         if (preferences == null) {
-            preferences = context.getSharedPreferences("huawei", Context.MODE_PRIVATE);
+            preferences = context.getSharedPreferences("zhang", Context.MODE_PRIVATE);
         }
     }
 

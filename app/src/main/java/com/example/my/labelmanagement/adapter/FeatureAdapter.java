@@ -204,7 +204,7 @@ public class FeatureAdapter extends RecyclerView.Adapter<FeatureAdapter.ViewHold
                                         holder.mTvDel1.setVisibility(View.GONE);
                                         holder.mTvDel2.setText(R.string.del_file);
                                         FileUtils.deleteFile(Environment.getExternalStorageDirectory()
-                                                + File.separator + "HuaweiRFID/feature/" + name);
+                                                + File.separator + "LabelRFID/feature/" + name);
                                     }
                                 }.start();
 

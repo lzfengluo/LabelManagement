@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:background="@drawable/bg_toolbar"
+        android:orientation="vertical">
+
+        <include layout="@layout/item_toolbar" />
+
+    </FrameLayout>
+
+    <com.example.my.labelmanagement.view.DropDownMenu
+        android:layout_marginTop="48dp"
+        android:id="@+id/dropDownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:dddividerColor="@color/tou_ming"
+        app:ddmaskColor="#88888888"
+        app:ddmenuBackgroundColor="@color/tou_ming"
+        app:ddmenuSelectedIcon="@mipmap/arrow2_up"
+        app:ddmenuTextSize="14sp"
+        app:ddmenuUnselectedIcon="@mipmap/arrow2_dropdown"
+        app:ddtextSelectedColor="@color/white"
+        app:ddtextUnselectedColor="@color/white"
+        app:ddunderlineColor="@color/tou_ming" />
+</FrameLayout>
