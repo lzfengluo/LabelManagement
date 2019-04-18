@@ -5,7 +5,7 @@ import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
 
 /**
- *
+ * 历史记录表
  */
 @Entity
 public class HistoryBean {

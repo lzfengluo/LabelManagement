@@ -5,7 +5,7 @@ import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
 
 /**
- * 记录导入过的表格名称
+ * 记录校验过的表格名称
  *
  */
 @Entity

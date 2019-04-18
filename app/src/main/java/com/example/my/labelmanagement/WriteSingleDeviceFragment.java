@@ -498,8 +498,7 @@ public class WriteSingleDeviceFragment extends LazyFragment implements OnNewInte
         getFocusable(xl);
         xl.findFocus();
         xl.setText(data);
-        String getdata = data.substring(2, 10);
-        TagInfoBean unique = MyApp.getDaoInstant().getTagInfoBeanDao().queryBuilder().where(TagInfoBeanDao.Properties.SN.eq(getdata)).unique();
+        TagInfoBean unique = MyApp.getDaoInstant().getTagInfoBeanDao().queryBuilder().where(TagInfoBeanDao.Properties.SN.eq(data)).unique();
         if (unique != null) {
             xl.setText(data);
             xh.setText(unique.getModel());

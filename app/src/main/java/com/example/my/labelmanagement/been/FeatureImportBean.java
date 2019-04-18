@@ -5,12 +5,12 @@ import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
 
 /**
- *
+ * 设备特征数据表
  */
 @Entity
 public class FeatureImportBean {
     @Id(autoincrement = false)
-    private String SN;
+    private String SN;//序列号
 
     private String OperationType;//操作类型
     private String Model;//设备型号

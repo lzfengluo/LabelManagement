@@ -3,7 +3,7 @@ package com.example.my.labelmanagement.been;
 import java.util.List;
 
 /**
- *
+ * 设备特征数据表
  */
 public class FeatureBean {
     private String name;
