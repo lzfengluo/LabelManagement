@@ -56,10 +56,10 @@ import static android.content.Context.INPUT_METHOD_SERVICE;
  * @author 张智超
  * @date 2019/4/13
  */
-public class WriteSingleDeviceFragment extends LazyFragment implements OnNewIntentListener, View.OnClickListener, ScanInterface.OnScanListener {
+public class WriteSingleDeviceFragment extends LazyFragment implements OnNewIntentListener, View.OnClickListener {
     private WriteActivity mContext;
     private ClearEditText xl;
-    private ImageView scanner;
+    private ImageView ivSearch;
     private ClearEditText xh;
     private TextView lb;
     private MySpinner spinnerType;
@@ -76,7 +76,6 @@ public class WriteSingleDeviceFragment extends LazyFragment implements OnNewInte
     private ClearEditText zcsyr;
     private ClearEditText bj;
     private Button btnWrite;
-    private ScanInterface scanDecode;
     private Tag tag;
     private CustomDatePicker mDatePicker;
 
@@ -107,12 +106,8 @@ public class WriteSingleDeviceFragment extends LazyFragment implements OnNewInte
 
     private void initData() {
         btnWrite.setOnClickListener(this);
-        scanner.setOnClickListener(this);
+
         imageRili.setOnClickListener(this);
-        scanDecode = new ScanDecode(mContext);
-        //初始化扫描服务
-        scanDecode.initService("true");
-        scanDecode.getBarCode(this);
 
         //获取焦点 光标出现
         xl.requestFocus();
@@ -197,13 +192,12 @@ public class WriteSingleDeviceFragment extends LazyFragment implements OnNewInte
     @Override
     protected void onDestroyViewLazy() {
         super.onDestroyViewLazy();
-        scanDecode.stopScan();
-        scanDecode.onDestroy();//回复初始状态
     }
 
     private void initView() {
+        ivSearch = (ImageView) findViewById(R.id.search);
+        ivSearch.setOnClickListener(this);
         xl = (ClearEditText) findViewById(R.id.xl);
-        scanner = (ImageView) findViewById(R.id.scanner);
         xh = (ClearEditText) findViewById(R.id.xh);
         lb = (TextView) findViewById(R.id.lb);
         spinnerType = (MySpinner) findViewById(R.id.spinner_type);
@@ -249,10 +243,9 @@ public class WriteSingleDeviceFragment extends LazyFragment implements OnNewInte
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.scanner:
-                scanDecode.starScan();
-                ToastUtil.customToastView(mContext, getString(R.string.scan_msg), Toast.LENGTH_SHORT
-                        , (TextView) LayoutInflater.from(mContext).inflate(R.layout.layout_toast, null));
+            case R.id.search:
+                String data = Objects.requireNonNull(xl.getText()).toString();
+                getData(data);
                 break;
             case R.id.image_rili:
             case R.id.ll_sj:
@@ -491,13 +484,7 @@ public class WriteSingleDeviceFragment extends LazyFragment implements OnNewInte
 
 
     @SuppressLint("InflateParams")
-    @Override
-    public void getBarcode(String data) {
-        ToastUtil.customToastView(mContext, getString(R.string.scan_success), Toast.LENGTH_SHORT
-                , (TextView) LayoutInflater.from(mContext).inflate(R.layout.layout_toast, null));
-        getFocusable(xl);
-        xl.findFocus();
-        xl.setText(data);
+    public void getData(String data) {
         TagInfoBean unique = MyApp.getDaoInstant().getTagInfoBeanDao().queryBuilder().where(TagInfoBeanDao.Properties.SN.eq(data)).unique();
         if (unique != null) {
             xl.setText(data);
@@ -516,11 +503,6 @@ public class WriteSingleDeviceFragment extends LazyFragment implements OnNewInte
             ToastUtil.customToastView(mContext, getString(R.string.db_no_data), Toast.LENGTH_SHORT
                     , (TextView) LayoutInflater.from(mContext).inflate(R.layout.layout_toast, null));
         }
-    }
-
-    @Override
-    public void getBarcodeByte(byte[] bytes) {
-
     }
 
     /**
@@ -623,9 +605,9 @@ public class WriteSingleDeviceFragment extends LazyFragment implements OnNewInte
                 } else {
                     cs.setTextColor(Color.BLACK);
                 }
-                if ("Huawei".equals(words)){
+                if ("Huawei".equals(words)) {
                     spinnerXh.setVisibility(View.VISIBLE);
-                }else {
+                } else {
                     spinnerXh.setVisibility(View.GONE);
                     xh.setText("");
                 }

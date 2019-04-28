@@ -305,8 +305,6 @@ public class ReadFragment extends LazyFragment implements OnNewIntentListener {
                         mTvRatePower.setText(readTagBeen.get_$10());
                         mTvOwner.setText(readTagBeen.get_$11());
                         mTvBujianNum.setText(readTagBeen.get_$5());
-
-                        serialPortSend(readTagBeen_sn);
                     }
 
                     boolean shake = MySharedPreferences.getBoolean("shake", true);
@@ -326,54 +324,5 @@ public class ReadFragment extends LazyFragment implements OnNewIntentListener {
             }
         }
 
-    }
-
-
-    private void serialPortSend(final String data) {
-        Observable.create(new ObservableOnSubscribe<Integer>() {
-            @Override
-            public void subscribe(ObservableEmitter<Integer> e) {
-                try {
-                    SerialPort serialPort = new SerialPort();
-                    serialPort.OpenSerial("/dev/ttyUSB0", 9600);
-                    int fd = serialPort.getFd();
-                    serialPort.clearPortBuf(fd);
-                    serialPort.WriteSerialByte(fd, data.getBytes());
-                    Thread.sleep(200);
-                    serialPort.CloseSerial(fd);
-                    e.onNext(1);
-                } catch (Exception e1) {
-                    e1.printStackTrace();
-                    e.onError(e1);
-                }
-            }
-        }).subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<Integer>() {
-                    private Disposable disposable;
-
-                    @Override
-                    public void onSubscribe(Disposable d) {
-                        this.disposable = d;
-                    }
-
-                    @SuppressLint("InflateParams")
-                    @Override
-                    public void onNext(Integer value) {
-                        ToastUtil.customToastView(getActivity(), getString(R.string.serport_success), Toast.LENGTH_SHORT
-                                , (TextView) LayoutInflater.from(getActivity()).inflate(R.layout.layout_toast, null));
-                        disposable.dispose();
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        disposable.dispose();
-                    }
-
-                    @Override
-                    public void onComplete() {
-                        disposable.dispose();
-                    }
-                });
     }
 }

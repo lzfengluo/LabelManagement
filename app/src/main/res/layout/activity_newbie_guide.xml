@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/bg_index_all" >
+    android:background="@color/bg_index_all"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,45 +13,194 @@
 
         <include layout="@layout/item_toolbar" />
     </LinearLayout>
-    <LinearLayout
-        android:id="@+id/guide_append"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp">
-        <TextView
-            android:id="@+id/newbie_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/guide_title1"
-            android:paddingTop="16dp"
-            android:textSize="16sp"
-            android:textColor="@color/dark_gray"/>
-        <TextView
-            android:id="@+id/newbie_model"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/guide_model1"
-            android:paddingTop="16dp"
-            android:paddingBottom="8dp"
-            android:textSize="16sp"
-            android:textColor="@color/light_gray"/>
-        <ImageView
-            android:id="@+id/newbie_img"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/newbie_guide_img"/>
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/newbie_desc"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="8dp"
-            android:text="@string/guide_desc"
-            android:textColor="@color/light_gray"
-            android:textSize="14sp" />
+            android:orientation="vertical"
+            android:paddingBottom="30dp">
 
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/guide_append"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <TextView
+                    android:id="@+id/newbie_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="16dp"
+                    android:text="@string/guide_title1"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/newbie_model"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/guide_model1"
+                    android:textColor="@color/light_gray"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/newbie_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/duqu" />
+
+                <TextView
+                    android:id="@+id/newbie_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:text="@string/guide_desc"
+                    android:textColor="@color/light_gray"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/guide_append2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <TextView
+                    android:id="@+id/newbie_title2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="16dp"
+                    android:text="@string/guide_title2"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/newbie_model2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/guide_model2_1"
+                    android:textColor="@color/light_gray"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/xieru_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/xieru" />
+
+                <TextView
+                    android:id="@+id/newbie_desc2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:text="@string/guide_desc2_1"
+                    android:textColor="@color/light_gray"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/newbie_model2_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/guide_model2_2"
+                    android:textColor="@color/light_gray"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/xieru_more"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/xieru_more" />
+
+                <TextView
+                    android:id="@+id/newbie_desc2_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:text="@string/guide_desc2_2"
+                    android:textColor="@color/light_gray"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/guide_append3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <TextView
+                    android:id="@+id/newbie_title3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="16dp"
+                    android:text="@string/guide_title3"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/file_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/file"
+                    android:layout_marginTop="16dp" />
+
+                <TextView
+                    android:id="@+id/newbie_model3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/guide_model3_1"
+                    android:textColor="@color/light_gray"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/newbie_desc3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:text="@string/guide_desc3_1"
+                    android:textColor="@color/light_gray"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/newbie_model3_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/guide_model3_2"
+                    android:textColor="@color/light_gray"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/newbie_desc3_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:text="@string/guide_desc2_2"
+                    android:textColor="@color/light_gray"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

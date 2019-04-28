@@ -77,13 +77,14 @@
                 </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/scanner"
+                    android:id="@+id/search"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:paddingLeft="16dp"
                     android:paddingTop="24dp"
                     android:paddingRight="16dp"
-                    android:src="@mipmap/icons_scan" />
+                    android:background="@color/gray"
+                    android:src="@mipmap/search_ico" />
             </LinearLayout>
 
 

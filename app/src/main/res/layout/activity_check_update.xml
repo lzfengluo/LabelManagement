@@ -35,17 +35,6 @@
             android:layout_marginBottom="40dp"
             android:textSize="16sp"
             android:textColor="@color/light_gray"/>
-        <Button
-            android:id="@+id/check_update_btn"
-            android:layout_width="match_parent"
-            android:layout_height="44dp"
-            android:text="@string/check_update"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:textSize="16sp"
-            android:textColor="@color/white"
-            android:background="@drawable/bg_btn_single_device" />
         <TextView
             android:id="@+id/check_update_tips"
             android:layout_width="wrap_content"
@@ -54,8 +43,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:textSize="12sp"
-            android:textColor="@color/dark_gray"
-            android:visibility="gone"/>
+            android:textColor="@color/dark_gray" />
     </LinearLayout>
 
 </LinearLayout>

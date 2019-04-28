@@ -16,6 +16,11 @@ import android.widget.Toast;
 public class ToastUtil {
     private static boolean isShow = true;//默认显示
     private static Toast mToast = null;//全局唯一的Toast
+    /**
+     * 写两个Toast对象是为了解决toast执行顺序有可能会抛出异常
+     */
+    private static Toast mTextToast;
+    private static Toast mViewToast;
 
     /*private控制不应该被实例化*/
     private ToastUtil() {
@@ -37,6 +42,8 @@ public class ToastUtil {
     public void cancelToast() {
         if (isShow && mToast != null) {
             mToast.cancel();
+            mTextToast.cancel();
+            mViewToast.cancel();
         }
     }
 
@@ -48,12 +55,12 @@ public class ToastUtil {
      */
     public static void showShort(Context context, CharSequence message) {
         if (isShow) {
-            if (mToast == null) {
-                mToast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
+            if (mTextToast == null) {
+                mTextToast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
             } else {
-                mToast.setText(message);
+                mTextToast.setText(message);
             }
-            mToast.show();
+            mTextToast.show();
         }
     }
 
@@ -65,12 +72,12 @@ public class ToastUtil {
      */
     public static void showShort(Context context, int resId) {
         if (isShow) {
-            if (mToast == null) {
-                mToast = Toast.makeText(context, resId, Toast.LENGTH_SHORT);
+            if (mTextToast == null) {
+                mTextToast = Toast.makeText(context, resId, Toast.LENGTH_SHORT);
             } else {
-                mToast.setText(resId);
+                mTextToast.setText(resId);
             }
-            mToast.show();
+            mTextToast.show();
         }
     }
 
@@ -83,11 +90,11 @@ public class ToastUtil {
     public static void showLong(Context context, CharSequence message) {
         if (isShow) {
             if (mToast == null) {
-                mToast = Toast.makeText(context, message, Toast.LENGTH_LONG);
+                mTextToast = Toast.makeText(context, message, Toast.LENGTH_LONG);
             } else {
-                mToast.setText(message);
+                mTextToast.setText(message);
             }
-            mToast.show();
+            mTextToast.show();
         }
     }
 
@@ -99,12 +106,12 @@ public class ToastUtil {
      */
     public static void showLong(Context context, int resId) {
         if (isShow) {
-            if (mToast == null) {
-                mToast = Toast.makeText(context, resId, Toast.LENGTH_LONG);
+            if (mTextToast == null) {
+                mTextToast = Toast.makeText(context, resId, Toast.LENGTH_LONG);
             } else {
-                mToast.setText(resId);
+                mTextToast.setText(resId);
             }
-            mToast.show();
+            mTextToast.show();
         }
     }
 
@@ -117,12 +124,12 @@ public class ToastUtil {
      */
     public static void show(Context context, CharSequence message, int duration) {
         if (isShow) {
-            if (mToast == null) {
-                mToast = Toast.makeText(context, message, duration);
+            if (mTextToast == null) {
+                mTextToast = Toast.makeText(context, message, duration);
             } else {
-                mToast.setText(message);
+                mTextToast.setText(message);
             }
-            mToast.show();
+            mTextToast.show();
         }
     }
 
@@ -135,12 +142,12 @@ public class ToastUtil {
      */
     public static void show(Context context, int resId, int duration) {
         if (isShow) {
-            if (mToast == null) {
-                mToast = Toast.makeText(context, resId, duration);
+            if (mTextToast == null) {
+                mTextToast = Toast.makeText(context, resId, duration);
             } else {
-                mToast.setText(resId);
+                mTextToast.setText(resId);
             }
-            mToast.show();
+            mTextToast.show();
         }
     }
 
@@ -154,17 +161,17 @@ public class ToastUtil {
      */
     public static void customToastView(Context context, int message, int duration, TextView view) {
         if (isShow) {
-            if (mToast == null) {
-                mToast = Toast.makeText(context, message, duration);
+            if (mViewToast == null) {
+                mViewToast = Toast.makeText(context, message, duration);
             }
             if (view != null) {
                 view.setHeight(280);
                 view.setWidth(460);
                 view.setText(message);
-                mToast.setView(view);
+                mViewToast.setView(view);
             }
-            mToast.setGravity(Gravity.CENTER, 0, 0);
-            mToast.show();
+            mViewToast.setGravity(Gravity.CENTER, 0, 0);
+            mViewToast.show();
         }
     }
 
@@ -178,17 +185,17 @@ public class ToastUtil {
      */
     public static void customToastView(Context context, String message, int duration, TextView view) {
         if (isShow) {
-            if (mToast == null) {
-                mToast = Toast.makeText(context, message, duration);
+            if (mViewToast == null) {
+                mViewToast = Toast.makeText(context, message, duration);
             }
             if (view != null) {
                 view.setHeight(280);
                 view.setWidth(460);
                 view.setText(message);
-                mToast.setView(view);
+                mViewToast.setView(view);
             }
-            mToast.setGravity(Gravity.CENTER, 0, 0);
-            mToast.show();
+            mViewToast.setGravity(Gravity.CENTER, 0, 0);
+            mViewToast.show();
         }
     }
 
@@ -204,13 +211,13 @@ public class ToastUtil {
      */
     public static void customToastGravity(Context context, CharSequence message, int duration, int gravity, int xOffset, int yOffset) {
         if (isShow) {
-            if (mToast == null) {
-                mToast = Toast.makeText(context, message, duration);
+            if (mTextToast == null) {
+                mTextToast = Toast.makeText(context, message, duration);
             } else {
-                mToast.setText(message);
+                mTextToast.setText(message);
             }
-            mToast.setGravity(gravity, xOffset, yOffset);
-            mToast.show();
+            mTextToast.setGravity(gravity, xOffset, yOffset);
+            mTextToast.show();
         }
     }
 
@@ -227,88 +234,17 @@ public class ToastUtil {
      */
     public static void showToastWithImageAndText(Context context, CharSequence message, int iconResId, int duration, int gravity, int xOffset, int yOffset) {
         if (isShow) {
-            if (mToast == null) {
-                mToast = Toast.makeText(context, message, duration);
+            if (mTextToast == null) {
+                mTextToast = Toast.makeText(context, message, duration);
             } else {
-                mToast.setText(message);
+                mTextToast.setText(message);
             }
-            mToast.setGravity(gravity, xOffset, yOffset);
-            LinearLayout toastView = (LinearLayout) mToast.getView();
+            mTextToast.setGravity(gravity, xOffset, yOffset);
+            LinearLayout toastView = (LinearLayout) mTextToast.getView();
             ImageView imageView = new ImageView(context);
             imageView.setImageResource(iconResId);
             toastView.addView(imageView, 0);
-            mToast.show();
+            mTextToast.show();
         }
     }
-
-    /**
-     * 自定义Toast,针对类型CharSequence
-     *
-     * @param context
-     * @param message
-     * @param duration
-     * @param view
-     * @param isGravity        true,表示后面的三个布局参数生效,false,表示不生效
-     * @param gravity
-     * @param xOffset
-     * @param yOffset
-     * @param isMargin         true,表示后面的两个参数生效，false,表示不生效
-     * @param horizontalMargin
-     * @param verticalMargin
-     */
-    public static void customToastAll(Context context, CharSequence message, int duration, View view, boolean isGravity, int gravity, int xOffset, int yOffset, boolean isMargin, float horizontalMargin, float verticalMargin) {
-        if (isShow) {
-            if (mToast == null) {
-                mToast = Toast.makeText(context, message, duration);
-            } else {
-                mToast.setText(message);
-            }
-            if (view != null) {
-                mToast.setView(view);
-            }
-            if (isMargin) {
-                mToast.setMargin(horizontalMargin, verticalMargin);
-            }
-            if (isGravity) {
-                mToast.setGravity(gravity, xOffset, yOffset);
-            }
-            mToast.show();
-        }
-    }
-
-    /**
-     * 自定义Toast,针对类型resId
-     *
-     * @param context
-     * @param resId
-     * @param duration
-     * @param view             :应该是一个布局，布局中包含了自己设置好的内容
-     * @param isGravity        true,表示后面的三个布局参数生效,false,表示不生效
-     * @param gravity
-     * @param xOffset
-     * @param yOffset
-     * @param isMargin         true,表示后面的两个参数生效，false,表示不生效
-     * @param horizontalMargin
-     * @param verticalMargin
-     */
-    public static void customToastAll(Context context, int resId, int duration, View view, boolean isGravity, int gravity, int xOffset, int yOffset, boolean isMargin, float horizontalMargin, float verticalMargin) {
-        if (isShow) {
-            if (mToast == null) {
-                mToast = Toast.makeText(context, resId, duration);
-            } else {
-                mToast.setText(resId);
-            }
-            if (view != null) {
-                mToast.setView(view);
-            }
-            if (isMargin) {
-                mToast.setMargin(horizontalMargin, verticalMargin);
-            }
-            if (isGravity) {
-                mToast.setGravity(gravity, xOffset, yOffset);
-            }
-            mToast.show();
-        }
-    }
-
 }

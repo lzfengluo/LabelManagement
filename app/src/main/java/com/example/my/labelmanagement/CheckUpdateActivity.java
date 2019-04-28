@@ -23,8 +23,6 @@ public class CheckUpdateActivity extends Activity {
     private ImageView mIvMenu;
     private TextView mToolbarTitle;
     private TextView checkUpdateVs;
-    private Button checkUpdateBtn;
-    private TextView checkUpdateTips;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,8 +36,6 @@ public class CheckUpdateActivity extends Activity {
         mIvMenu = findViewById(R.id.iv_menu);
         mToolbarTitle = findViewById(R.id.mToolbarTitle);
         checkUpdateVs = findViewById(R.id.check_update_vs);
-        checkUpdateBtn = findViewById(R.id.check_update_btn);
-        checkUpdateTips = findViewById(R.id.check_update_tips);
     }
 
     @SuppressLint("SetTextI18n")
@@ -52,18 +48,6 @@ public class CheckUpdateActivity extends Activity {
             }
         });
         mToolbarTitle.setText(R.string.menu_update);
-        checkUpdateBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                checkUpdate();
-            }
-        });
         checkUpdateVs.setText(getString(R.string.check_version) + CommonUtils.getAppVersionName(getApplicationContext()));
-    }
-
-    private void checkUpdate() {
-        // 检查更新逻辑
-        checkUpdateBtn.setText(getResources().getString(R.string.install_version));
-        checkUpdateTips.setVisibility(View.VISIBLE);
     }
 }

@@ -10,7 +10,7 @@
     <string name="menu_shake">震动</string>
     <string name="menu_more">更多</string>
     <string name="menu_guide">新手指南</string>
-    <string name="menu_update">版本更新</string>
+    <string name="menu_update">版本信息</string>
     <string name="menu_help">帮助</string>
     <string name="menu_agreement">用户协议</string>
 
@@ -176,13 +176,24 @@
     <string name="is_del_file">确定删除此文件吗？</string>
 
     <!--新手指南 activity_newbie_guide-->
-    <string name="guide_title1">标题1</string>
-    <string name="guide_model1">模块一</string>
-    <string name="guide_desc">具体操作具体操作具体操作具体操作</string>
+    <string name="guide_title1">读取</string>
+    <string name="guide_model1">读取功能</string>
+    <string name="guide_desc">在读取界面，将NFC标签贴近设备NFC功能区域，校验码验证通过则会成功读出标签内容，并显示出来。</string>
+    <string name="guide_title2">写入</string>
+    <string name="guide_model2_1">单个写入</string>
+    <string name="guide_desc2_1">单个写入分为设备信息写入和机柜信息写入两个模块，*为必填项，必填项非空时，写入按钮可用。\n执行写入操作时，需将标签贴近设备NFC功能区，确保标签被读到，然后点击写入按钮，等待弹出toast提示框后，将标签离开NFC功能区即可完成写入操作。</string>
+    <string name="guide_model2_2">批量写入</string>
+    <string name="guide_desc2_2">批量写入功能需先在文件管理中对设备标签清单表进行校验，校验成功则可进行对表格中标签信息的批量写入操作。</string>
+    <string name="guide_title3">文件管理</string>
+    <string name="guide_model3_1">IT设备特征数据表</string>
+    <string name="guide_desc3_1">IT设备特征数据表会读取LabelRFID/feature路径下的表格文件，然后可以执行导入数据库操作，以及查看导入历史。</string>
+    <string name="guide_model3_2">设备标签清单表</string>
+    <string name="guide_desc3_2">设备标签清单表会读取LabelRFID/tag路径下的表格文件，校验成功后会将数据存放到数据库中，可以在批量写入中对表格中的标签信息进行批量处理。</string>
+
     <!--检查更新 activity_check_update-->
-    <string name="check_version">AssetManager-</string>
+    <string name="check_version">标签管理系统-</string>
     <string name="check_update">检查更新</string>
-    <string name="new_version">当前最新版本V1.0.1</string>
+    <string name="new_version">当前版本V1.0.1</string>
     <string name="install_version">安装</string>
 
     <string name="welcome">欢迎使用标签管理系统</string>
@@ -209,7 +220,7 @@
     <!--用户协议-->
     <string name="agreement_title1">总则</string>
     <string name="agreement_text1">
-        用户应当同意本协议的条款并按照页面上的提示完成全部的注册程序。用户在进行注册程序过程中点击“同意”按钮即表示用户与本公司达成协议，完全接受本协议项下的全部条款。
+        用户应当同意本协议的条款并按照页面上的提示使用本程序。用户在进行使用程序过程中即表示用户与本公司达成协议，完全接受本协议项下的全部条款。
     </string>
     <string name="agreement_title2">
         内容规范
