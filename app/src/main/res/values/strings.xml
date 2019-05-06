@@ -48,7 +48,6 @@
     <string name="rack_row">机柜行号(1–500)</string>
     <string name="rack_column">机柜列号(1–500)</string>
     <string name="rack_ipv4">IPv4地址</string>
-    <string name="serport_success">SN信息已通过串口发送成功</string>
 
     <string name="write_more">批量写入</string>
     <string name="header_class">全部分组</string>
@@ -109,8 +108,6 @@
     <string name="write_dialog2_mesage">RFID写入成功,是否继续写入?</string>
     <string name="write_dialog2_btnsu">继续写入</string>
     <string name="write_dialog2_btnfa">取消</string>
-    <string name="scan_msg">请对准条形码</string>
-    <string name="scan_success">扫描成功</string>
     <string name="db_no_data">数据库中无对应信息</string>
     <string name="support">不支持MifareUltralight数据格式!</string>
     <string name="near">请将RFID标签或者贴纸靠近手机背面</string>
