@@ -207,16 +207,15 @@
 
     <string name="help_que_title1">1. 为什么我点击“批量写入”没有显示可录入的表格</string>
     <string name="help_que_content1">
-        第一，查看文件管理的设备标签清单表，里面是否有表文件；\n
-        第二，文件管理中的设备标签清单表是否已校验成功，没有校验是无法写入的。
+        第一，查看文件管理的设备标签清单表，里面是否有表文件；\n第二，文件管理中的设备标签清单表是否已校验成功，没有校验是无法写入的。
     </string>
-    <string name="help_que_title2">2. 第二个问题</string>
+    <string name="help_que_title2">2. 为什么我的文件管理中没有文件</string>
     <string name="help_que_content2">
-        关于第二个问题的解决方法。
+        需要将用到的Excel表文件放到指定目录下，系统才会检测到。\nIT设备特征数据表文件需要放在LabelRFID/feature路径下；\n设备标签清单表文件需要放在LabelRFID/tag路径下。
     </string>
-    <string name="help_que_title3">3. 第三个问题</string>
+    <string name="help_que_title3">3. 点击写入为什么提示我写入失败</string>
     <string name="help_que_content3">
-        关于第三个问题的解决方法。
+        将标签贴近设备读写区域重新执行写卡操作，写入标签需要一定的时间，写入过程中需要标签一直贴近读写区域，若中途拿离标签可能会造成写入失败。
     </string>
 
     <!--用户协议-->
