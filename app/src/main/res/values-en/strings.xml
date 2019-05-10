@@ -139,115 +139,115 @@
     <string name="rack_status">Configuration status</string>
     <string name="rack_msg">Configuration information</string>
 
-    <string name="file_feature_title">IT设备特征数据表</string>
-    <string name="file_feature_address">文件路径：LabelRFID/feature</string>
-    <string name="file_tag_title">设备标签清单表</string>
-    <string name="file_tag_address">文件路径：LabelRFID/tag</string>
+    <string name="file_feature_title">IT equipment characteristic data sheet</string>
+    <string name="file_feature_address">The file path:LabelRFID/feature</string>
+    <string name="file_tag_title">Device label list</string>
+    <string name="file_tag_address">The file path:LabelRFID/tag</string>
 
-    <string name="no_file_error">LabelRFID/tag目录下没有可用文件</string>
-    <string name="import_error">导入过程发生错误</string>
-    <string name="no_file">未扫描到手机文件</string>
-    <string name="file_name">文件名</string>
-    <string name="del_hint">s后删除源文件</string>
-    <string name="feature_num">标签数：</string>
-    <string name="import_db">导入数据库</string>
-    <string name="import_success">导入成功</string>
-    <string name="dialog_error_title">导入失败</string>
-    <string name="data_load">数据加载中…</string>
-    <string name="see_history">查看导入历史记录</string>
-    <string name="failed_save">失败日志已保存至</string>
-    <string name="sure">确定</string>
-    <string name="save_failed">错误信息保存失败</string>
-    <string name="history">导入历史记录</string>
-    <string name="history_add">新增</string>
-    <string name="history_update">修改</string>
-    <string name="history_del">删除</string>
-    <string name="del_file">已删除源文件</string>
-    <string name="expect_success">数据库导出完成，数据已保存至LabelRFID/log/History.xlsx</string>
-    <string name="expect_nodata">无数据导出</string>
-    <string name="export_failed">导出失败</string>
-    <string name="check">校验</string>
-    <string name="check_success">校验成功</string>
-    <string name="check_failed">校验失败</string>
-    <string name="delete">删除</string>
-    <string name="delete_failed">文件删除失败</string>
-    <string name="write_already">已写标签</string>
-    <string name="all_tag">标签总数</string>
-    <string name="again_status">状态</string>
-    <string name="jiaoyan_success">校验成功，标签信息已同步到批量写入页面</string>
-    <string name="is_del_file">确定删除此文件吗？</string>
+    <string name="no_file_error">No files are available in the LabelRFID/tag directory</string>
+    <string name="import_error">An error occurred during import</string>
+    <string name="no_file">No phone file scanned</string>
+    <string name="file_name">File Name</string>
+    <string name="del_hint">s deletes the source file</string>
+    <string name="feature_num">Tag number:</string>
+    <string name="import_db">Import database</string>
+    <string name="import_success">Import success</string>
+    <string name="dialog_error_title">Import failure</string>
+    <string name="data_load">Data loading…</string>
+    <string name="see_history">View the import history</string>
+    <string name="failed_save">The failure log has been saved to </string>
+    <string name="sure">determine</string>
+    <string name="save_failed">Error message saved failed</string>
+    <string name="history">Import history</string>
+    <string name="history_add">add</string>
+    <string name="history_update">update</string>
+    <string name="history_del">delete</string>
+    <string name="del_file">The source file has been deleted</string>
+    <string name="expect_success">Database export is complete, the data saved to LabelRFID/log/History.xlsx</string>
+    <string name="expect_nodata">Data derivation</string>
+    <string name="export_failed">Export failure</string>
+    <string name="check">check</string>
+    <string name="check_success">Check success</string>
+    <string name="check_failed">Check failure</string>
+    <string name="delete">delete</string>
+    <string name="delete_failed">File deletion failed</string>
+    <string name="write_already">Written label</string>
+    <string name="all_tag">All label</string>
+    <string name="again_status">state</string>
+    <string name="jiaoyan_success">The tag information has been synchronized to the batch write page</string>
+    <string name="is_del_file">Are you sure to delete this file?</string>
 
     <!--新手指南 activity_newbie_guide-->
-    <string name="guide_title1">读取</string>
-    <string name="guide_model1">读取功能</string>
-    <string name="guide_desc">在读取界面，将NFC标签贴近设备NFC功能区域，校验码验证通过则会成功读出标签内容，并显示出来。</string>
-    <string name="guide_title2">写入</string>
-    <string name="guide_model2_1">单个写入</string>
-    <string name="guide_desc2_1">单个写入分为设备信息写入和机柜信息写入两个模块，*为必填项，必填项非空时，写入按钮可用。\n执行写入操作时，需将标签贴近设备NFC功能区，确保标签被读到，然后点击写入按钮，等待弹出toast提示框后，将标签离开NFC功能区即可完成写入操作。</string>
-    <string name="guide_model2_2">批量写入</string>
-    <string name="guide_desc2_2">批量写入功能需先在文件管理中对设备标签清单表进行校验，校验成功则可进行对表格中标签信息的批量写入操作。</string>
-    <string name="guide_title3">文件管理</string>
-    <string name="guide_model3_1">IT设备特征数据表</string>
-    <string name="guide_desc3_1">IT设备特征数据表会读取LabelRFID/feature路径下的表格文件，然后可以执行导入数据库操作，以及查看导入历史。</string>
-    <string name="guide_model3_2">设备标签清单表</string>
-    <string name="guide_desc3_2">设备标签清单表会读取LabelRFID/tag路径下的表格文件，校验成功后会将数据存放到数据库中，可以在批量写入中对表格中的标签信息进行批量处理。</string>
+    <string name="guide_title1">Read</string>
+    <string name="guide_model1">Read</string>
+    <string name="guide_desc">In the reading interface, close the NFC tag to the NFC functional area of the device. If the verification code passes, the tag content will be read and displayed successfully.</string>
+    <string name="guide_title2">Write</string>
+    <string name="guide_model2_1">Single write</string>
+    <string name="guide_desc2_1">A single write is divided into two modules: device information write and cabinet information write. * is a required item. When the required item is not blank, the write button is available.\nWhen performing the write operation, the label shall be close to the NFC functional area of the device to ensure that the label is read, and then click the write button. After the toast prompt box pops up, the label shall be removed from the NFC functional area to complete the write operation.</string>
+    <string name="guide_model2_2">Batch write</string>
+    <string name="guide_desc2_2">The batch write function needs to verify the device label list table in the file management first. If the verification is successful, the batch write operation of the label information in the table can be carried out.</string>
+    <string name="guide_title3">File</string>
+    <string name="guide_model3_1">IT equipment characteristic data sheet</string>
+    <string name="guide_desc3_1">The IT device feature data table reads the table file under the LabelRFID/feature path and can then perform the import database operation and view the import history.</string>
+    <string name="guide_model3_2">Device label list</string>
+    <string name="guide_desc3_2">The device tag list table will read the table file in the path of LabelRFID/tag, and store the data into the database after successful verification. The label information in the table can be processed in batch in the batch write.</string>
 
     <!--检查更新 activity_check_update-->
-    <string name="check_version">AssetManager-</string>
-    <string name="check_update">检查更新</string>
-    <string name="new_version">当前最新版本V1.0.1</string>
-    <string name="install_version">安装</string>
+    <string name="check_version">LabelManagement-</string>
+    <string name="check_update">Check the update</string>
+    <string name="new_version">Current version V1.0.1</string>
+    <string name="install_version">install</string>
 
-    <string name="welcome">欢迎使用标签管理系统</string>
+    <string name="welcome">Welcome to the label management system</string>
 
     <!--帮助 activity_help-->
-    <string name="help_title">热点问题</string>
-    <string name="help_que_title">问题标题</string>
-    <string name="help_que_way">具体解决方法</string>
+    <string name="help_title">Hot issue</string>
+    <string name="help_que_title">Question title</string>
+    <string name="help_que_way">Specific solutions</string>
 
-    <string name="help_que_title1">1. 为什么我点击“批量写入”没有显示可录入的表格</string>
+    <string name="help_que_title1">1. Why do I click "batch write" without showing the table that can be input</string>
     <string name="help_que_content1">
-        第一，查看文件管理的设备标签清单表，里面是否有表文件；\n第二，文件管理中的设备标签清单表是否已校验成功，没有校验是无法写入的。
+        First, check the device label list of file management, whether there is a table file;\nSecond, whether the list of device labels in the file management has been successfully verified, it cannot be written without verification.
     </string>
-    <string name="help_que_title2">2. 为什么我的文件管理中没有文件</string>
+    <string name="help_que_title2">2. Why are there no files in my file management</string>
     <string name="help_que_content2">
-        需要将用到的Excel表文件放到指定目录下，系统才会检测到。\nIT设备特征数据表文件需要放在LabelRFID/feature路径下；\n设备标签清单表文件需要放在LabelRFID/tag路径下。
+        The system will not detect the Excel file until it is placed in the specified directory.\nIT equipment feature data table files need to be placed under LabelRFID/feature path;\n device tag list file needs to be placed under LabelRFID/tag path.
     </string>
-    <string name="help_que_title3">3. 点击写入为什么提示我写入失败</string>
+    <string name="help_que_title3">3. Click "write". Why did it prompt me to fail</string>
     <string name="help_que_content3">
-        将标签贴近设备读写区域重新执行写卡操作，写入标签需要一定的时间，写入过程中需要标签一直贴近读写区域，若中途拿离标签可能会造成写入失败。
+        The tag should be close to the reading and writing area of the device to perform the card writing operation again. It will take some time to write the tag. The tag should always be close to the reading and writing area during the writing process.
     </string>
 
     <!--用户协议-->
-    <string name="agreement_title1">总则</string>
+    <string name="agreement_title1">General provisions</string>
     <string name="agreement_text1">
-        用户应当同意本协议的条款并按照页面上的提示完成全部的注册程序。用户在进行注册程序过程中点击“同意”按钮即表示用户与本公司达成协议，完全接受本协议项下的全部条款。
+        User shall agree to the terms of this agreement and complete all registration procedures as indicated on the page.By clicking the "agree" button during the registration process, the user has reached an agreement with the company and fully accepted all the terms hereunder.
     </string>
     <string name="agreement_title2">
-        内容规范
+        Content specification
     </string>
     <string name="agreement_text2">
-        1、本条所述内容是指用户使用本服务过程中所制作、上载、复制、发布、传播的任何内容，包括但不限于帐号头像、名称、用户说明等注册信息及认证资料，或文字、语音、图片、视频、图文等发送、回复或自动回复消息和相关链接页面，以及其他使用帐号或本服务所产生的内容。
-        \n2、用户不得利用“本软件”帐号或本服务制作、上载、复制、发布、传播如下法律、法规和政策禁止的内容：
-        \n(1) 反对宪法所确定的基本原则的；
-        \n(2) 危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；
-        \n(3) 损害国家荣誉和利益的；
-        \n(4) 煽动民族仇恨、民族歧视，破坏民族团结的；
-        \n(5) 破坏国家宗教政策，宣扬邪教和封建迷信的；
-        \n(6) 散布谣言，扰乱社会秩序，破坏社会稳定的；
-        \n(7) 散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；
-        \n(8) 侮辱或者诽谤他人，侵害他人合法权益的；
-        \n(9) 不遵守法律法规底线、社会主义制度底线、国家利益底线、公民合法权益底线、社会公共秩序底线、道德风尚底线和信息真实性底线的“七条底线”要求的；
-        \n(10) 含有法律、行政法规禁止的其他内容的信息。
+        1. The content mentioned in this article refers to any content produced, uploaded, duplicated, published and disseminated by users in the course of using this service, including but not limited to registration information and authentication information such as account head image, name, user description, or sending, replying or auto-replying messages and related link pages such as text, voice, picture, video, graphics, etc., as well as other user accounts or this service. The content of business.
+        \n2. Users shall not make use of the \"Software\" account or this service to produce, upload, duplicate, distribute or disseminate the contents prohibited by the following laws, regulations and policies:
+        \n(1) Opposing the basic principles laid down in the Constitution;
+        \n(2) endangering national security, divulging State secrets, subverting state power and undermining national unity;
+        \n(3) Damaging the honour and interests of the state;
+        \n(4) inciting national hatred and discrimination and undermining national unity;
+        \n(5) Destroying the state\'s religious policy and promoting cults and feudal superstitions;
+        \n(6) Disseminating rumors, disrupting social order and destabilizing society;
+        \n(7) Disseminating obscenity, pornography, gambling, violence, murder, terror or abetting crime;
+        \n(8) insulting or slandering others and infringing upon their legitimate rights and interests;
+        \n(9) Failure to comply with the \"seven bottom lines\" of laws and regulations, socialist system, national interests, citizens\'legitimate rights and interests, social and public order, ethics and information authenticity;
+        \n(10) Information containing other contents prohibited by laws and administrative regulations.
     </string>
-    <string name="agreement_title3">其他</string>
+    <string name="agreement_title3">Other</string>
     <string name="agreement_text3">
-        本协议的订立、执行和解释及争议的解决均应适用中华人民共和国法律。
+        The laws of the People\'s Republic of China shall apply to the conclusion, implementation and interpretation of this Agreement and the settlement of disputes.
     </string>
 
 
-    <string name="nfc_erro">请在系统设置启用NFC功能!</string>
-    <string name="nfc_erro2">设备不支持NFC!</string>
+    <string name="nfc_erro">Please enable NFC function in system Settings!</string>
+    <string name="nfc_erro2">NFC is not supported on the device!</string>
 
 
 </resources>

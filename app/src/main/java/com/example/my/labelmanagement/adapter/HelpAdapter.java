@@ -16,7 +16,9 @@ import java.util.List;
 
 
 /**
- * Created by 张智超_ on 2019/01/21.
+ *
+ * @author 张智超_
+ * @date 2019/01/21
  * Email 981547125@qq.com
  */
 public class HelpAdapter extends ArrayAdapter<HelpListUtil> {
