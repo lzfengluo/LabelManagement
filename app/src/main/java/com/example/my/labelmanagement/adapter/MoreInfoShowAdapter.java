@@ -37,6 +37,7 @@ import java.util.List;
 
 
 /**
+ * 批量写入标签列表适配器
  * @author 张智超
  * @date 2019/4/16
  */

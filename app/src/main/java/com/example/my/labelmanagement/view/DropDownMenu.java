@@ -22,7 +22,7 @@ import java.util.List;
 
 
 /**
- * Created by dongjunkun on 2015/6/17.
+ * 下拉筛选菜单
  */
 public class DropDownMenu extends LinearLayout {
 

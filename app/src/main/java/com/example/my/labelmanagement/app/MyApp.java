@@ -14,14 +14,15 @@ import java.io.File;
 
 public class MyApp extends Application {
     private static MyApp m_application;
-    //greendao
+    /**
+     * greendao管理者
+     */
     private static DaoSession daoSession;
     @Override
     public void onCreate() {
         super.onCreate();
         m_application = this;
         setupDatabase();
-        CrashReport.initCrashReport(getApplicationContext(), "de36b59503", false);
 
         FileUtils.createOrExistsDir(Environment.getExternalStorageDirectory() + File.separator + "LabelRFID/feature/");
         FileUtils.createOrExistsDir(Environment.getExternalStorageDirectory() + File.separator + "LabelRFID/feature/log/");

@@ -178,10 +178,10 @@ public class ToastUtil {
     /**
      * 自定义Toast的View
      *
-     * @param context
-     * @param message
-     * @param duration 单位:毫秒
-     * @param view     显示自己的View
+     * @param context   上下文对象
+     * @param message   显示的信息
+     * @param duration  单位:毫秒
+     * @param view      显示自己的View
      */
     public static void customToastView(Context context, String message, int duration, TextView view) {
         if (isShow) {
